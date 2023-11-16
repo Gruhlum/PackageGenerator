@@ -1,0 +1,12 @@
+{
+  "name": "com.hextecgames.packagegenerator",
+  "version": "1.0.0",
+  "displayName": "PackageGenerator",
+  "description": "Package to generate the default package structure",
+  "unity": "2019.1",
+  "dependencies": {},
+  "author": {
+    "name": "HexTecGames"
+  },
+  "hideInEditor": "false"
+}
