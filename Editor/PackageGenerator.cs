@@ -55,7 +55,7 @@ namespace HexTecGames.PackageGenerator
             {
                 infoText = GenerateProjectFiles();
                 AssetDatabase.Refresh();
-            }          
+            }
         }
 
         private string GenerateProjectFiles()
@@ -83,7 +83,7 @@ namespace HexTecGames.PackageGenerator
             if (editorDirectory)
             {
                 Directory.CreateDirectory(Path.Combine(Application.dataPath, displayNameNoSpace, "Editor"));
-                GenerateASMDEF(Path.Combine("Editor"), ".Editor" , true);
+                GenerateASMDEF(Path.Combine("Editor"), ".Editor", true);
             }
 
             if (testDirectory)
@@ -108,7 +108,7 @@ namespace HexTecGames.PackageGenerator
                 {
                     Directory.CreateDirectory(Path.Combine(Application.dataPath, displayNameNoSpace, "Samples", "Example " + i));
                 }
-            }           
+            }
             return "Success";
         }
         private void GeneratePackageJSON()
