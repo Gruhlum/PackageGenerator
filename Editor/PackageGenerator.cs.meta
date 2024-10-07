@@ -3,7 +3,9 @@ guid: e7899983fdaba2d4d8e8f4f3d110f1a2
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - m_ViewDataDictionary: {instanceID: 0}
+  - gitIgnore: {fileID: 4900000, guid: a019c1eb4954aa043b768d2c410910e3, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -7,12 +7,15 @@ namespace HexTecGames.PackageGenerator
 {
     public class PackageGenerator : EditorWindow
     {
+        public TextAsset gitIgnore;
+
         static string author;
         static string displayName;
 
         static bool documentationDirectory;
         static bool editorDirectory = true;
         static bool testDirectory;
+        static bool addGitIgnoreFile;
         static int examples;
 
         private string authorNoSpace;
@@ -45,6 +48,7 @@ namespace HexTecGames.PackageGenerator
             editorDirectory = EditorGUILayout.Toggle("Editor", editorDirectory);
             testDirectory = EditorGUILayout.Toggle("Tests", testDirectory);
             documentationDirectory = EditorGUILayout.Toggle("Documentation", documentationDirectory);
+            addGitIgnoreFile = EditorGUILayout.Toggle("Add GitIgnore", addGitIgnoreFile);
             examples = EditorGUILayout.IntField("Examples: ", examples);
 
             if (string.IsNullOrEmpty(infoText) == false)
@@ -100,6 +104,17 @@ namespace HexTecGames.PackageGenerator
             if (documentationDirectory)
             {
                 Directory.CreateDirectory(Path.Combine(Application.dataPath, displayNameNoSpace, "Documentation"));
+            }
+            if (addGitIgnoreFile)
+            {
+                if (gitIgnore != null)
+                {
+                    using (StreamWriter sw = File.CreateText(Path.Combine(Application.dataPath, displayNameNoSpace, ".gitIgnore")))
+                    {
+                        sw.Write(gitIgnore.text);
+                    }
+                }
+                else Debug.Log("No gitIgnore file selected");
             }
             if (examples > 0)
             {
