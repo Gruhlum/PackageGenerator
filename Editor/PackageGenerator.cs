@@ -1,5 +1,4 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using UnityEditor;
 using UnityEngine;
 
@@ -9,14 +8,14 @@ namespace HexTecGames.PackageGenerator
     {
         public TextAsset gitIgnore;
 
-        static string author;
-        static string displayName;
+        private string author;
+        private string displayName;
 
-        static bool documentationDirectory;
-        static bool editorDirectory = true;
-        static bool testDirectory;
-        static bool addGitIgnoreFile;
-        static int examples;
+        private bool documentationDirectory;
+        private bool editorDirectory = true;
+        private bool testDirectory;
+        private bool addGitIgnoreFile;
+        private int examples;
 
         private string authorNoSpace;
         private string displayNameNoSpace;
@@ -28,6 +27,7 @@ namespace HexTecGames.PackageGenerator
         {
             GetWindow(typeof(PackageGenerator));
         }
+
 
         private void OnGUI()
         {
@@ -135,7 +135,7 @@ namespace HexTecGames.PackageGenerator
                 sw.WriteLine("  \"version\": \"1.0.0\",");
                 sw.WriteLine("  \"displayName\": \"{0}\",", displayName);
                 sw.WriteLine("  \"description\": \"My Package\",");
-                sw.WriteLine("  \"unity\": \"2019.1\",");
+                sw.WriteLine("  \"unity\": \"2022.1\",");
                 sw.WriteLine("  \"dependencies\": {},");
                 sw.WriteLine("  \"author\": {");
                 sw.WriteLine("    \"name\": \"{0}\"", author);
