@@ -29,7 +29,7 @@ namespace HexTecGames.PackageGenerator
         }
 
 
-        private void OnGUI()
+        private void OnEnable()
         {
             if (string.IsNullOrEmpty(author))
             {
@@ -39,7 +39,10 @@ namespace HexTecGames.PackageGenerator
             {
                 displayName = Application.productName;
             }
+        }
 
+        private void OnGUI()
+        {
             GUILayout.Label("Generate Package", EditorStyles.boldLabel);
             author = EditorGUILayout.TextField("Author", author);
             displayName = EditorGUILayout.TextField("Package Name", displayName);
